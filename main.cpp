@@ -12,7 +12,7 @@ int main() {
         if (line.empty()) return 0;
         for (char c : line) {
             if (isalpha(c)) {
-                freq[tolower(c)]++;
+                freq[c]++;
             }
         }
         for (map<char, int>::iterator it = freq.begin(); it != freq.end(); ++it) {
