@@ -47,10 +47,8 @@ string decode(const string& str) {
         }
         if (str[i] == ' ') i++;
         c = str[i++];
-        cout << "Count: " << count << endl;
         if (count == 0) count = 1;
         decoded += string(count, c);
-        cout << "Decoded: " << decoded << endl;
     }
     return decoded;
 }
