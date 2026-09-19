@@ -1,3 +1,4 @@
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <string>
@@ -15,10 +16,17 @@ int main() {
                 freq[c]++;
             }
         }
+        double entropy = 0.0;
         for (map<char, int>::iterator it = freq.begin(); it != freq.end(); ++it) {
-            cout << it->first << " " << it->second << endl;
+            // calculate entropy
+            double prob = it->second / (double)line.length();
+            entropy += -prob * log2(prob);
         }
-        freq.clear();
+        // print with 4 decimal places
+        cout << "bytes=" << line.length() << endl;
+        std::cout << "entropy=" << std::fixed << std::setprecision(4) << entropy << std::endl;
+        std::cout << "min_size=" << std::fixed << std::setprecision(3) << entropy << std::endl;
     }
+    // calculate entropy
     return 0;
 }
