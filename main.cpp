@@ -1,6 +1,7 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <cmath>
 #include <string>
 using namespace std;
 
