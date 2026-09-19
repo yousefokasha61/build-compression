@@ -60,7 +60,7 @@ int main() {
         if (line.empty()) return 0;
         vector<string> tokens = split(line, ' ');
         if (tokens[0] == "ENCODE") {
-            cout << encode(tokens[1]) << endl;
+            cout << encode(line.find("ENCODE") != string::npos ? line.substr(7) : line) << endl;
             return 0;
         }
         cout << decode(line.find("DECODE") != string::npos ? line.substr(7) : line) << endl;
